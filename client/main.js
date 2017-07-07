@@ -19,8 +19,48 @@ Meteor.startup(function() {
 
 
 
-// vetor da secao Lugares //
-////////////////////////////
+// Template.editarLugar.events({
+//   'submit form': function(e) {
+//     e.preventDefault();
+
+//     var currentLugartId = this._id;
+
+//     var propriedadesLugar = {
+//         identificador: $(e.target).find('[name="identificador]').val(), 
+//         title: $(e.target).find('[name=title]').val(),
+//         path: $(e.target).find('[name=path]').val(),
+//         descricao: $(e.target).find('[name=descricao]').val()
+//     }
+
+//     Lugares.update(currentLugartId, {$set: propriedadesLugar}, function(error) {
+//       if (error) {
+//         // display the error to the user
+//         alert(error.reason);
+//       } else {
+//         Router.go('postPage', {_id: currentLugartId});
+//       }
+//     });
+//   },
+
+//   'click .delete': function(e) {
+//     e.preventDefault();
+
+//     if (confirm("Delete this post?")) {
+//       var currentLugartId = this._id;
+//       var currentLugartId = this._id;
+//       Lugares.remove(currentPostId);
+//       Router.go('postsList');
+//     }
+//   }
+// });
+
+
+
+
+
+
+
+
 
 
 
@@ -46,24 +86,13 @@ Template.secaoLugares.events({
             $("#nome-lugar").val("");
             $("#imagem-lugar").val("");
             $("#descricao").val("");
-
-		// var e = Cadastro.find({email: event.target.email.value}).count()
-		// var c = Cadastro.find({email: event.target.cpf.value}).count()
-		// var s = Cadastro.find({email: event.target.senha.value}).count()
-
-		// Cadastro.insert({nome: event.target.nome.value, cpf: event.target.cpf.value, email: event.target.email.value, tel: event.target.tel.value, senha: event.target.senha.value, created: new Date()});        
-   		
-        // var identificador = event.target.identificador-lugar.value;
-        // var title = event.target.nome-lugar.value;
-        // var path = event.target.imagem-lugar.value;
-        // var descricao = event.target.descricao.value;
-
-        // //alert(identificador + "  " + title + "  " + path + "  " + descricao);
-
-
-        // Lugares.insert({identificador: event.target.identificador-lugar.value, title: event.target.nome-lugar.value, path: event.target.imagem-lugar.value, descricao: event.target.descricao.value, createdAt: new Date()});  
-
    	}
+
+    // 'click #botao-buscar-lugar': function(event){
+    //     vetorLugares: function() {
+    //         return Lugares.find({title: $("#botao-buscar-lugar").val()}, {sort: {createdAt: -1}});
+    //     }
+    // }   
 
 
 });

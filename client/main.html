@@ -55,12 +55,21 @@
     </header>
     {{> modalLogin}}
     <main class="conteudo-principal">
-       
+       {{> sliderAplicacao}}
         <!-- 1ª seção - Lugares -->
         {{> secaoLugares}}
 
         <!-- seção guia turistico -->
-        <!--{{> secaoGuiaTuristico}} -->
+        {{> secaoGuiaTuristico}}
+
+        <!-- secao hospedagem -->
+        {{> secaoHospedagem}}
+
+        <!-- secao carona solidaria -->
+        {{> secaoCaronaSolidaria}}
+
+        <!-- secao contato -->
+        {{> secaoContato}}
     
     
     </main>
@@ -173,28 +182,28 @@
                                 <h3>Conheça este e muitos outros lugares</h3>
                                 <a href="#lugares" class="btn btn-primary btn-block">Conheça muitos lugares!</a>
                             </div>
-                            <img src="img/canoa-quebrada.jpg"  class="img-responsive hidden-print" alt="Imagem da praia de Canoa Quebrada - CE" title="Canoa Quebrada - CE" >
+                            <img src="canoa-quebrada.jpg"  class="img-responsive hidden-print" alt="Imagem da praia de Canoa Quebrada - CE" title="Canoa Quebrada - CE" >
                         </div>
                         <div class="item">
                             <div class="carousel-caption">
                                 <h3>Se você é um guia turístico ou está a procura de um, nós podemos te ajudar!</h3>
                                 <a href="#guia-turistico" class="btn btn-primary btn-block">Encontre um guia turístico!</a>
                             </div>
-                            <img src="img/guia-turistico-2-1024x768.jpg" class="img-responsive hidden-print" alt="Imagem de um Guia Turístico" title="Guia Turístico" >
+                            <img src="guia-turistico-2-1024x768.jpg" class="img-responsive hidden-print" alt="Imagem de um Guia Turístico" title="Guia Turístico" >
                         </div>
                         <div class="item">
                             <div class="carousel-caption">
                                 <h3>Também temos dicas de hospedagens para você!</h3>
                                 <a href="#hospedagem" class="btn btn-primary btn-block">Opções de hospedagem!</a>
                             </div>
-                            <img src="img/hospedagem-mochileiro-1024x768.jpg" class="img-responsive hidden-print" alt="Imagem de um local de hospedagem" title="Hospedagem" >
+                            <img src="hospedagem-mochileiro-1024x768.jpg" class="img-responsive hidden-print" alt="Imagem de um local de hospedagem" title="Hospedagem" >
                         </div>
                         <div class="item">
                             <div class="carousel-caption">
                                 <h3>Está procurando ou oferecendo carona para sua viagem?!</h3>
                                 <a href="#carona-solidaria" class="btn btn-primary btn-block">Ofertas e procura por carona!</a>
                             </div>
-                            <img src="img/carona.jpg" alt="Imagem de um rapaz pedindo carona" class="img-responsive hidden-print" title="Carona" >
+                            <img src="carona.jpg" alt="Imagem de um rapaz pedindo carona" class="img-responsive hidden-print" title="Carona" >
                         </div>
                     </div>
 
@@ -232,11 +241,18 @@
                     </div>
                         
                 </div>
+                <br>
+                <div class="div-buscar-lugar">
+                    <input type="text" id="botao-buscar-lugar" class="form-control" placeholder="Buscar lugar...">
+                </div>
+                <br>
+                   
 
 
                 <!-- aqui foram ussados os accordions para cada um dos quatro lugares que sao "ofertados" na pagina inicia -->
                 
                 {{> adicionarLugar}}
+                
                               
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     {{#each vetorLugares}}
@@ -273,6 +289,7 @@
     </section>
     <!-- fim 2ª seção -->
 </template>
+
 
 
 <template name="adicionarLugar">
@@ -321,8 +338,6 @@
         </div> 
     </div> <!-- fim div modal cadastro -->
 </template>
-
-
 
 <template name="secaoGuiaTuristico">
     <!-- 3ª seção GUIA TURISTICO -->
@@ -421,15 +436,15 @@
                 </div>
                 <div class="row">
                     <div class="hidden-xs col-sm-4  col-md-4  col-lg-4">
-                        <img src="img/pousada.jpg" class="img-responsive img-circle hidden-print" alt="Imagem de uma Pousada" title="Pousada">
+                        <img src="pousada.jpg" class="img-responsive img-circle hidden-print" alt="Imagem de uma Pousada" title="Pousada">
                         <p>Está procurando um lugar calmo para relaxar?! Uma pousada talvez seja um ótimo lugar.</p>
                     </div>
                     <div class="hidden-xs col-sm-4  col-md-4  col-lg-4">
-                        <img src="img/hosteis.jpg" class="img-responsive img-circle hidden-print" alt="Uma de um hostel" title="Hosteis">
+                        <img src="hosteis.jpg" class="img-responsive img-circle hidden-print" alt="Uma de um hostel" title="Hosteis">
                         <p>Talvez vocês esteja procurando um lugar com um preço mais em conta ou para que você juntamente com sua galera possam ficar juntos. Um hostel é uma boa dica.</p>
                     </div>
                     <div class="hidden-xs col-sm-4  col-md-4  col-lg-4">
-                        <img src="img/hotel.jpg" class="img-responsive img-circle hidden-print" alt="Imagem de um quarto de Hotel" title="Hotel">
+                        <img src="hotel.jpg" class="img-responsive img-circle hidden-print" alt="Imagem de um quarto de Hotel" title="Hotel">
                         <p>Também lhe ajudamos caso você seja um pouco mais exigente e queira um pouco mais de conforto para descansar.</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
@@ -462,11 +477,11 @@
                 <p>Como todo bom mochileiro sempre está a procura de lugares novos para conhecer e se aventurar. Disponibilizamos uma ferramenta que auxilia na busca por pessoas que estejam indo a lugares próximos ao seu destino para lhe dar aquela carona amiga. E você que já definiu seu destino e possui um veículo, mas há espaço vago e gostaria de dividir os custos, aqui também é o seu lugar.</p>
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-1 col-lg-4 col-lg-off-set-1">
-                        <img src="img/carona.jpg" class="img-responsive img-rounder hidden-print" alt="Imagem de um rapaz pedindo Carona" title="Carona"><br>
+                        <img src="carona.jpg" class="img-responsive img-rounder hidden-print" alt="Imagem de um rapaz pedindo Carona" title="Carona"><br>
                         <a class="btn btn-success btn-block" href="#"  data-toggle="tooltip" data-placement="bottom" title="Você deve estar logado para usar esta funcionalidade">OFERECER CARONA</a>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-2 col-lg-4 col-lg-off-set-2">
-                       <img src="img/carona-2.jpg" class="img-responsive img-rounder hidden-print" alt="Imagem de duas pessoas pedindo Carona" title="Carona"><br>
+                       <img src="carona-2.jpg" class="img-responsive img-rounder hidden-print" alt="Imagem de duas pessoas pedindo Carona" title="Carona"><br>
                         <a class="btn btn-success btn-block" href="#" data-toggle="tooltip" data-placement="bottom" title="Você deve estar logado para usar esta funcionalidade">PROCURAR CARONA</a>
                     </div>
                 </div>
