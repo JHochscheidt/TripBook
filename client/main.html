@@ -1,31 +1,15 @@
 <head>
-  <title>TripBook</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Aplicação que auxilia usuários a encontrar lugares para viajar, hospeagens, guias turisticos e caronas">
+    <meta name="author" content="Jackson Henrique Hochscheidt">
+    <meta name="keywords" content="viagem, mochileiro, hospedagem, carona, guia turistico">
+    <meta name="copyright" content="2017 Jackson Henrique Hochscheidt">    
+    <title>TripBook - A rede social do viajante</title>
 </head>
 
 <body data-spy="scroll" data-target=".menu-navegacao" data-offset="80">
-      
-      {{> menuNavegacao}}
-
-      
-      
-      
-      aqui fila da puta
-
-
-
-      {{#each lugares}}
-      <p>{{title}}</p>      
-      <p>{{descricao}}</p>
-
-      {{/each}}
-
-
-</body>
-
-
-
-<template name="menuNavegacao">
-  <span id="topo"></span>
+    <span id="topo"></span>
     <header class="cabecalho" id="cabecalho">
         <!-- menu da aplicacao -->
         <nav class="navbar navbar-default navbar-fixed-top" >
@@ -69,4 +53,480 @@
             </div>
         </nav><!-- fim menu da aplicacao -->
     </header>
+    {{> modalLogin}}
+    <main class="conteudo-principal">
+       
+        <!-- 1ª seção - Lugares -->
+        {{> secaoLugares}}
+
+        <!-- seção guia turistico -->
+        <!--{{> secaoGuiaTuristico}} -->
+    
+    
+    </main>
+    <!-- rodape --> 
+    <footer class="rodape section-cinza" id="rodape">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-center">
+                    <address>
+                        <strong>Universidade Federal da Fronteira Sul</strong><br>
+                        Campus Chapecó-SC<br>
+                        Rodovia SC 484 Km 02, Fronteira Sul<br>
+                        CEP 89815-899<br>
+                        
+                        <abbr title="Phone">P:</abbr> (49) 2049 2600
+                    </address>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-center">
+                    <strong>Ciência da Computação - Campus Chapecó - SC</strong><br>
+                    CCR - Tópicos Especiais em Desenvolvimento Web<br>
+                    7ª Fase - Matutino - 2017.<br><br>
+                    
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-center">
+                    <address>
+                        <strong>Jackson Henrique Hochscheidt</strong><br>
+                        Acadêmico do Curso de Ciência da Computação<br>
+                        <a href="mailto:#">jackson94h@gmail.com</a>
+                    </address>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                    Copyright © 2017 | Jackson Henrique Hochscheidt
+                </div>
+                
+            </div> 
+        </div>
+    </footer>
+    <!-- fim rodape -->  
+
+</body>
+
+<template name="modalLogin">
+    <div class="container">
+        <!-- Aqui é o modal de login -->
+        <div class="modal fade" id="modal-login" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Conteudo do Modal -->
+                <div class="modal-content">
+                    <div class="modal-header" >
+                        <button type="button" class="close" data-toggle="modal" data-dismiss="modal">&times;</button>
+                        <h4><span class="glyphicon glyphicon-lock"></span>Login</h4>
+                    </div>
+                    <div class="modal-body" style="padding:40px 50px;">
+                        <form role="form">
+                            <fieldset>
+                                <legend>Acesso ao sistema:</legend>
+                                <div class="form-group">
+                                    <label for="username" class="sr-only"><span class="glyphicon glyphicon-user"></span> Username</label>
+                                    <input type="text" class="form-control" id="username" placeholder="Enter email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="passwd" class="sr-only"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+                                    <input type="password" class="form-control" id="passwd" placeholder="Enter password" required>
+                                </div>
+                            </fieldset>
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="" checked>Remember me</label>
+                            </div>
+
+                            {{> login}}
+                            <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div> <!-- fim div modal login -->
+</template>
+
+
+<template name="login">
+    {{#if currentUser}}
+        Now you're logged in as <strong>{{currentUser.username}}</strong> using {{getEmail}}
+
+        <br> <br> <button class="log-out">Log out</button>
+    {{else}}
+        <button type="button" class="btn btn-primary btn-block log-in" id="botao-login">Facebook Login</button>
+    {{/if}}
+</template>
+
+
+
+<template name="sliderAplicacao">
+    <!-- slide da aplicacao -->
+    <section class="slider-aplicacao section-cinza" id="slider-aplicacao">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-off-set-2">
+                <div id="sliderprincipal" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#sliderprincipal" data-slide-to="0" class="active"></li>
+                        <li data-target="#sliderprincipal" data-slide-to="1"></li>
+                        <li data-target="#sliderprincipal" data-slide-to="2"></li>
+                        <li data-target="#sliderprincipal" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <div class="carousel-caption">
+                                <h3>Conheça este e muitos outros lugares</h3>
+                                <a href="#lugares" class="btn btn-primary btn-block">Conheça muitos lugares!</a>
+                            </div>
+                            <img src="img/canoa-quebrada.jpg"  class="img-responsive hidden-print" alt="Imagem da praia de Canoa Quebrada - CE" title="Canoa Quebrada - CE" >
+                        </div>
+                        <div class="item">
+                            <div class="carousel-caption">
+                                <h3>Se você é um guia turístico ou está a procura de um, nós podemos te ajudar!</h3>
+                                <a href="#guia-turistico" class="btn btn-primary btn-block">Encontre um guia turístico!</a>
+                            </div>
+                            <img src="img/guia-turistico-2-1024x768.jpg" class="img-responsive hidden-print" alt="Imagem de um Guia Turístico" title="Guia Turístico" >
+                        </div>
+                        <div class="item">
+                            <div class="carousel-caption">
+                                <h3>Também temos dicas de hospedagens para você!</h3>
+                                <a href="#hospedagem" class="btn btn-primary btn-block">Opções de hospedagem!</a>
+                            </div>
+                            <img src="img/hospedagem-mochileiro-1024x768.jpg" class="img-responsive hidden-print" alt="Imagem de um local de hospedagem" title="Hospedagem" >
+                        </div>
+                        <div class="item">
+                            <div class="carousel-caption">
+                                <h3>Está procurando ou oferecendo carona para sua viagem?!</h3>
+                                <a href="#carona-solidaria" class="btn btn-primary btn-block">Ofertas e procura por carona!</a>
+                            </div>
+                            <img src="img/carona.jpg" alt="Imagem de um rapaz pedindo carona" class="img-responsive hidden-print" title="Carona" >
+                        </div>
+                    </div>
+
+                    <a class="left carousel-control" href="#sliderprincipal" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                    <a class="right carousel-control" href="#sliderprincipal" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Próximo</span>
+                    </a>
+                </div>    
+            </div>
+        </div> 
+    </div>
+    </section> 
+<!-- fim slide da aplicacao -->
+</template>
+
+<template name="secaoLugares">
+    <!-- 2ª seção  LUGARES -->
+    <section class="lugares section-branca" id="lugares">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="page-Header">
+                    <h1>Lugares <small>Conheça alguns lugares para você viajar</small></h1>
+                </div>
+                <hr/>
+                <p>Está querendo viajar mas não decidiu ainda o destino? Veja algumas das opções que preparamos para você:</p>
+
+                <div class="div-adicionar-lugar">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary btn-block" id="botao-adicionar-lugar">Adicionar Lugar</button>
+                    </div>
+                        
+                </div>
+
+
+                <!-- aqui foram ussados os accordions para cada um dos quatro lugares que sao "ofertados" na pagina inicia -->
+                
+                {{> adicionarLugar}}
+                              
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    {{#each vetorLugares}}
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{identificador}}" aria-expanded="true" aria-controls="{{identificador}}">
+                            {{title}}
+                            </a>
+                            </h4>
+                        </div>
+                        <div id="{{identificador}}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                                    <div class="thumbnail">
+                                        <img src="lugares/{{path}}"  class="img-responsive hidden-print" alt="{{title}}" title="{{title}}">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12- col-sm-6 col-md-9 col-lg-9">
+                                    <div class="caption">
+                                        <h3>{{title}}</h3>
+                                    </div>
+                                    <p>{{descricao}}</p>
+                                    <p><a href="#" class="btn btn-primary" role="button" data-toggle="tooltip" data-placement="bottom" title="Página ainda não implementada">Saiba Mais</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}         
+                </div> <!-- fim div panelgroup (acordion) -->
+            </div>
+        </div>
+    </div> <!-- fim container-->
+    </section>
+    <!-- fim 2ª seção -->
+</template>
+
+
+<template name="adicionarLugar">
+    <div class="container">
+        <!-- Aqui é o modal de login -->
+        <div class="modal fade" id="modal-adicionar-lugar" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Conteudo do Modal -->
+                <div class="modal-content">
+                    <div class="modal-header" >
+                        <button type="button" class="close" data-toggle="modal" data-dismiss="modal">&times;</button>
+                        <h4><span class="glyphicon glyphicon-plus"></span>Adicionar</h4>
+                    </div>
+                    <div class="modal-body" style="padding:40px 50px;">
+                        <form role="form" id="form-adicionar-lugar">
+                            <fieldset>
+                                <legend>Informações do Lugar</legend>
+                                <div class="form-group">
+                                    <label for="identificador-lugar" class="sr-only">Identificador</label>
+                                    
+                                    <input type="text" name="identificador-lugar" id="identificador-lugar" class="form-control" placeholder="* Identificador do lugar" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nome-lugar" class="sr-only">Nome do Lugar</label>
+                                    <input type="text" name="nome-lugar" class="form-control" id="nome-lugar" placeholder="Nome do lugar" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="descricao" class="sr-only">Descrição</label>
+                                    <textarea class="form-control" name="descricao" rows="5" id="descricao" placeholder="descricao do lugar" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="imagem-lugar" class="sr-only">Imagem do lugar</label>
+                                    Imagem do lugar
+                                    <input type="file" class="form-control" id="imagem-lugar" name="imagem-lugar" value="" placeholder="Nome do lugar" required>
+                                </div>
+
+                            </fieldset>
+                            <p>* Campo não pode conter espaços, nem começar com número ou cararcter especial!</p>
+
+                            <button type="submit" class="btn btn-success btn-block file-upload-input"><span class="glyphicon glyphicon-plus"></span> Adicionar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div> <!-- fim div modal cadastro -->
+</template>
+
+
+
+<template name="secaoGuiaTuristico">
+    <!-- 3ª seção GUIA TURISTICO -->
+    <section class="guia-turisticos section-cinza" id="guia-turistico">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="page-Header">
+                    <h1>Guia Turístico <small>Se você é um guia turístico ou está procurando um, seu lugar é aqui</small></h1>
+                </div>
+                <div class="row">
+                    <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-md-8 col-md-offset-2">
+                        <p>Todo bom mochileiro gosta de boas aventuras e adrenalina, e para que você possa desfrutar mais da sua viagem, talves seja necessário um guia turístico. Nós da <strong>TripBook</strong> nos preocupamos com isso, lhe disponibilizando a procura por guias turísticos, para que você e seus amigos tenham uma melhor experiência de viagem. 
+                        </p>
+                        <p>Nos preocupamos também com você, que é guia turístico, seja por profissão ou por hobby ( caso você resida próximo a algum local turístico) e queira ajudar as pessoas em suas viagens, proporcionando melhores experiências para elas, e para você mesmo, conhecendo novas pessoas e culturas.
+                        </p>
+                        <p>Este espaço serve para quem viaja em família também, e que precisa de um guia turístico que conheça bem o destino de vocês e que lhes proporcione as melhores experiências de suas vidas, lhes dando as melhores dicas e lhes guiando da melhor forma possível.</p>
+                        <p>Se você é um guia turístico buscando novas experiências. Cadastre e venha trabalhar conosco.</p>
+                        <p>Caso você esteja à procura de um guia turístico, você está no lugar certo.</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-2 col-lg-4 text-center">
+                        <a href="#" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="bottom" title="Faça login para utilizar a ferramenta">Procurar Guia Turístico</a>   
+                    </div>
+                
+                    <div class="col-xs-12 col-sm-12 col-md-4  col-lg-4 text-center">
+                        <a href="#" id="botao-cadastro-guia-turistico" class="btn btn-success btn-block" data-toggle="tooltip" data-placement="bottom" title="Faça login para utilizar a ferramenta">Cadastro Guia Turístico</a>     
+                    </div>
+                    {{> adicionarGuiaTuristico}}
+                </div>        
+            </div>
+        </div>
+    </div>
+    </section>
+    <!-- fim 3ª seção -->
+</template>
+
+
+<template name="adicionarGuiaTuristico">
+    <div class="container">
+        <!-- Aqui é o modal de login -->
+        <div class="modal fade" id="modal-adicionar-guia-turistico" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Conteudo do Modal -->
+                <div class="modal-content">
+                    <div class="modal-header" >
+                        <button type="button" class="close" data-toggle="modal" data-dismiss="modal">&times;</button>
+                        <h4><span class="glyphicon glyphicon-plus"></span>Adicionar</h4>
+                    </div>
+                    <div class="modal-body" style="padding:40px 50px;">
+                        <form role="form" id="form-adicionar-lugar">
+                            <fieldset>
+                                <legend>Informações do Lugar</legend>
+                                <div class="form-group">
+                                    <label for="identificador-lugar" class="sr-only">Identificador</label>
+                                    
+                                    <input type="text" name="identificador-lugar" id="identificador-lugar" class="form-control" placeholder="* Identificador do lugar" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nome-lugar" class="sr-only">Nome do Lugar</label>
+                                    <input type="text" name="nome-lugar" class="form-control" id="nome-lugar" placeholder="Nome do lugar" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="descricao" class="sr-only">Descrição</label>
+                                    <textarea class="form-control" name="descricao" rows="5" id="descricao" placeholder="descricao do lugar" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="imagem-lugar" class="sr-only">Imagem do lugar</label>
+                                    Imagem do lugar
+                                    <input type="file" class="form-control" id="imagem-lugar" name="imagem-lugar" value="" placeholder="Nome do lugar" required>
+                                </div>
+
+                            </fieldset>
+                            <p>* Campo não pode conter espaços, nem começar com número ou cararcter especial!</p>
+
+                            <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-plus"></span> Adicionar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div> <!-- fim div modal login -->
+</template>
+
+
+
+
+<template name="secaoHospedagem">
+    <!-- 4ª seção HOSPEDAGEM -->
+    <section class="hospedagem section-branca" id="hospedagem">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="page-Header">
+                    <h1>Hospedagem <small>Está procurando lugar para se hospedar?! </small></h1>
+                </div>
+                <div class="row">
+                    <div class="hidden-xs col-sm-4  col-md-4  col-lg-4">
+                        <img src="img/pousada.jpg" class="img-responsive img-circle hidden-print" alt="Imagem de uma Pousada" title="Pousada">
+                        <p>Está procurando um lugar calmo para relaxar?! Uma pousada talvez seja um ótimo lugar.</p>
+                    </div>
+                    <div class="hidden-xs col-sm-4  col-md-4  col-lg-4">
+                        <img src="img/hosteis.jpg" class="img-responsive img-circle hidden-print" alt="Uma de um hostel" title="Hosteis">
+                        <p>Talvez vocês esteja procurando um lugar com um preço mais em conta ou para que você juntamente com sua galera possam ficar juntos. Um hostel é uma boa dica.</p>
+                    </div>
+                    <div class="hidden-xs col-sm-4  col-md-4  col-lg-4">
+                        <img src="img/hotel.jpg" class="img-responsive img-circle hidden-print" alt="Imagem de um quarto de Hotel" title="Hotel">
+                        <p>Também lhe ajudamos caso você seja um pouco mais exigente e queira um pouco mais de conforto para descansar.</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+                        <br>
+                        <p>Você está pensando em viajar mas não sabe onde se hospedar?! O <strong>TripBook</strong> te auxilia na escolha.</p>
+                        <div class="alert alert-warning">
+                            <strong>Aviso!</strong> Não disponibilizamos preços de hotéis, pousadas, hosteis... apenas lhe auxiliamos na escolha de um local próximo ao destino desejado!
+                        </div>
+                        
+                        <a href="#" class="btn btn-block btn-primary" data-toggle="tooltip" data-placement="bottom" title="Faça login para utilizar a ferramenta">Encontrar hospedagem</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <!-- fim 4ª seção -->
+</template>
+
+<template name="secaoCaronaSolidaria">
+    <!-- 5ª seção CARONA SOLIDÁRIA -->
+    <section class="carona-solidaria section-cinza" id="carona-solidaria">
+    <div class="container"> 
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="page-Header">
+                    <h1>Carona Solidária <small>Está procurando ou oferecendo uma carona?! Seu lugar é aqui!!!</small></h1>
+                </div>
+                <p>Como todo bom mochileiro sempre está a procura de lugares novos para conhecer e se aventurar. Disponibilizamos uma ferramenta que auxilia na busca por pessoas que estejam indo a lugares próximos ao seu destino para lhe dar aquela carona amiga. E você que já definiu seu destino e possui um veículo, mas há espaço vago e gostaria de dividir os custos, aqui também é o seu lugar.</p>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-1 col-lg-4 col-lg-off-set-1">
+                        <img src="img/carona.jpg" class="img-responsive img-rounder hidden-print" alt="Imagem de um rapaz pedindo Carona" title="Carona"><br>
+                        <a class="btn btn-success btn-block" href="#"  data-toggle="tooltip" data-placement="bottom" title="Você deve estar logado para usar esta funcionalidade">OFERECER CARONA</a>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-2 col-lg-4 col-lg-off-set-2">
+                       <img src="img/carona-2.jpg" class="img-responsive img-rounder hidden-print" alt="Imagem de duas pessoas pedindo Carona" title="Carona"><br>
+                        <a class="btn btn-success btn-block" href="#" data-toggle="tooltip" data-placement="bottom" title="Você deve estar logado para usar esta funcionalidade">PROCURAR CARONA</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section> 
+    <!-- fim 5ª seção -->
+</template>
+
+<template name="secaoContato">
+    <!-- 6ª seção CONTATO -->
+    <section class="contato section-branca" id="contato">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="page-Header col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+                        <h1>Contato <small>Entre em contato conosco!!!</small></h1>
+                    </div>    
+                </div>
+                
+                <div class="row">
+                    <form>
+                        <fieldset >
+                            <legend class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">Dados pessoais: </legend>
+                            <div class="form-group col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+                                <label for="nome" class="sr-only">Nome Completo:</label>
+                                <input type="text" class="form-control" id="nome" placeholder="Nome completo" required minlength="5" />
+                            </div>
+                            <div class="form-group col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+                                <label for="email" class="sr-only">E-mail:</label>
+                                <input type="email" class="form-control" id="email" placeholder="exemplo@dominio.com" />
+                            </div>  
+                        </fieldset>
+                        
+                        <fieldset>
+                            <legend class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">Mensagem: </legend>
+                            <div class="form-group col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+                                <label for="finaliade">Finalidade da mensagem:</label>
+                                <select class="form-control">
+                                    <option>Dúvidas</option>
+                                    <option>Sugestões</option>
+                                    <option>Reclamações</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+                                <label for="mensagem" class="sr-only">Deixe sua mensagem:</label>
+                                <textarea class="form-control" rows="5" id="mensagem" placeholder="Escreva aqui sua mensagem ..." required></textarea>
+                            </div>
+                            <div class="form-group col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+                                <input class="btn btn-default btn-success btn-block" type="submit" value="Enviar">
+                            </div>
+                        </fieldset>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <!-- fim 6ª seção -->
 </template>

@@ -1,0 +1,107 @@
+<!--
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Cachoeira do Urucá - Uiramutã - <abbr title="Roraima">RR</abbr>
+                            </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                                    <div class="thumbnail">
+                                        <img src="img/lugares/cachoeira-do-uruca-uiramuta-rr-640px.jpg"  class="img-responsive hidden-print" alt="Imagem da Cachoeira do Urucá - Uiramuta - RR" title="Cachoeira do Urucá - Uiramuta - RR">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12- col-sm-6 col-md-9 col-lg-9">
+                                    <div class="caption">
+                                        <h3>Cachoeira do Urucá - Uiramutã - <abbr title="Roraima">RR</abbr></h3>
+                                    </div>
+                                    <p>Lugar ideal para aqueles que desejam realizar trilhas ecológicas. A cachoeira do Urucá fica no município de Uiramutã, região habitada por povos indígenas. A região fica situada no extremo norte do estado de Roraima, fronteira com a Guiana e Venezuela. 
+                                    </p>
+                                    <p><a href="#" class="btn btn-primary" role="button" data-toggle="tooltip" data-placement="bottom" title="Página ainda não implementada">Saiba Mais</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Centro Histórico de Ouro Preto - <abbr title="Minas Gerais">MG</abbr>
+                            </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                                    <div class="thumbnail">
+                                        <img src="img/lugares/centro-historico-ouro-preto-mg-640px.jpg" class="img-responsive hidden-print" alt="Imagem do Centro Histórico de Ouro Preto - MG" title="Centro Histórico de Ouro Preto - MG">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-9 col-lg-9">  
+                                    <div class="caption">
+                                        <h3>Centro Histórico de Ouro Preto - <abbr title="Minas Gerais">MG</abbr></h3>
+                                        <p>A Cidade Histórica de Ouro Preto situa-se em Minas Gerais, Brasil, tendo sido o primeiro sítio brasileiro considerado Patrimônio Mundial da UNESCO, título que recebeu em 1980. Foi considerada patrimônio estadual em 1933 e monumento nacional em 1938. É famoso por sua arquitetura colonial. Ouro Preto localiza-se em uma das principais áreas do ciclo do ouro. O município chegou a ser a cidade mais populosa da América Latina, contando com cerca de 40 mil pessoas em 1730 e, décadas após, 80 mil. Àquela época, a população de Nova York era de menos da metade desse número de habitantes e a população de São Paulo não ultrapassava 8 mil. 
+                                        </p>
+                                        <p><a href="#" class="btn btn-primary" role="button" data-toggle="tooltip" data-placement="bottom" title="Página ainda não implementada">Saiba Mais</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Monte Roraima - <abbr title="Roraima">RR</abbr>
+                            </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                                    <div class="thumbnail">
+                                        <img src="img/lugares/monte-roraima-rr-640px.jpg" class="img-responsive hidden-print" alt="Imagem do Monte Roraima - RR" title="Monte Roraima - RR">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-9 col-lg-9">
+                                    <div class="caption">
+                                        <h3>Monte Roraima - <abbr title="Roraima">RR</abbr></h3>
+                                        <p>O monte Roraima é uma montanha localizada na tríplice fronteira entre Brasil, Venezuela e Guiana, na América do Sul. Constitui um tepui, um tipo de monte em formato de mesa bastante característico do planalto das Guianas. Delimitado por falésias de cerca de 1.000 metros de altura. Esse ambiente é protegido no território venezuelano pelo Parque Nacional Canaima e no território brasileiro pelo Parque Nacional do Monte Roraima.
+                                        </p>
+                                        <p><a href="#" class="btn btn-primary" role="button" data-toggle="tooltip" data-placement="bottom" title="Página ainda não implementada">Saiba Mais</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFour">
+                            <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Morro do Pai Inacio - Chapada Diamantina - <abbr title="Bahia">BA</abbr>
+                            </a>
+                            </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                            <div class="panel-body">
+                                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                                    <div class="thumbnail">
+                                        <img src="img/lugares/morro-pai-inacio-chapada-diamantina-ba-640px.jpg" class="img-responsive hidden-print" alt="Imagem do Morro do Pai Inacio - Chapada Diamantina - BA" title="Morro do Pai Inacio - Chapada Diamantina - BA">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-9 col-lg-9"> 
+                                    <div class="caption">
+                                        <h3>Morro do Pai Inacio - Chapada Diamantina - <abbr title="Bahia">BA</abbr></h3>
+                                        <p>O Morro do Pai Inácio, um dos atrativos mais requisitados e famosos da Chapada Diamantina, possui 1.120m de altitude. Quem o visita não esquece jamais o visual visto de cima do morro. Dos 250 metros do topo do Morro do Pai Inácio se avista o Morro do Camelo, o Vale do Capão e o Morrão, sem falar de um dos cartões postais mais lindos da Chapada Diamantina: o pôr do sol do Morro do Pai Inácio.
+                                        </p>
+                                        <p><a href="#" class="btn btn-primary" role="button" data-toggle="tooltip" data-placement="bottom" title="Página ainda não implementada">Saiba Mais</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    -->                    
+                    <!--aqui termina o uso dos accordions -->
